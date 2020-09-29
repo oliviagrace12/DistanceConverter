@@ -30,22 +30,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void convertButtonClicked(View view) {
-        String inputString = inputValue.getText().toString();
-        Log.d(TAG, "Got string value: " + inputString);
-        if (inputString == null || inputString.isEmpty()) {
+        String input = inputValue.getText().toString();
+        if (input.isEmpty()) {
+            outputValue.setText("");
             return;
         }
-        Double input = Double.valueOf(inputString);
-        String output = format.format(input * 1.60934);
 
+        String output = convertMilesToKilometers(input);
         outputValue.setText(output);
-        if (historyValue.getText().toString().isEmpty()) {
-            historyValue.setText(output);
-        } else {
-            StringBuilder builder = new StringBuilder(output);
-            builder.append("\n").append(historyValue.getText().toString());
-            historyValue.setText(builder.toString());
-        }
+        setHistory(input, output);
+    }
+
+    private String convertMilesToKilometers(String inputString) {
+        return format.format(Double.parseDouble(inputString) * 1.60934);
+    }
+
+    private String convertKilometersToMiles(String input) {
+        return format.format(Double.parseDouble(input) * 0.621371);
+    }
+
+    private void setHistory(String input, String output) {
+        historyValue.setText("Mi to Km: " + input + " ==> " + output + "\n" + historyValue.getText().toString());
     }
 
     public void clearButtonClicked(View view) {
