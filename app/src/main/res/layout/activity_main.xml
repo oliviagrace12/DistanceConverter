@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/convertButton"
+    android:id="@+id/converter"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
@@ -26,7 +26,7 @@
         app:layout_constraintGuide_begin="16dp" />
 
     <TextView
-        android:id="@+id/enterValueLabel"
+        android:id="@+id/inputLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="96dp"
@@ -37,28 +37,29 @@
         app:layout_constraintTop_toBottomOf="@+id/conversionTextView" />
 
     <EditText
-        android:id="@+id/enterValue"
+        android:id="@+id/inputValue"
         android:layout_width="161dp"
         android:layout_height="54dp"
         android:autoText="false"
         android:ems="10"
         android:hint="@string/enter_value_in_miles"
-        android:inputType="numberSigned"
+        android:inputType="numberSigned|numberDecimal"
         android:shadowColor="#FFFFFF"
         android:textSize="24sp"
         android:visibility="visible"
-        app:layout_constraintBaseline_toBaselineOf="@+id/enterValueLabel"
+        app:layout_constraintBaseline_toBaselineOf="@+id/inputLabel"
         app:layout_constraintEnd_toStartOf="@+id/guidelineRight" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/convertButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
+        android:onClick="convertButtonClicked"
         android:text="Convert"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/enterValueLabel" />
+        app:layout_constraintTop_toBottomOf="@+id/inputLabel" />
 
     <TextView
         android:id="@+id/resultLabel"
@@ -69,7 +70,7 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/convertButton" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineRight"
@@ -79,7 +80,7 @@
         app:layout_constraintGuide_end="16dp" />
 
     <TextView
-        android:id="@+id/viewResult"
+        android:id="@+id/resultValue"
         android:layout_width="161dp"
         android:layout_height="51dp"
         android:textSize="24sp"
@@ -98,11 +99,10 @@
         app:layout_constraintTop_toBottomOf="@+id/resultLabel" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/conversionHistoryText"
         android:layout_width="357dp"
         android:layout_height="145dp"
         android:layout_marginTop="16dp"
-        android:text="TextView"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
         app:layout_constraintTop_toBottomOf="@+id/conversionHistoryLabel" />
@@ -112,9 +112,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:onClick="clearButtonClicked"
         android:text="Clear"
         app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
         app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/conversionHistoryText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
