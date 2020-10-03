@@ -40,7 +40,7 @@
         android:id="@+id/inputValue"
         android:layout_width="161dp"
         android:layout_height="54dp"
-        android:autoText="false"
+        android:autofillHints=""
         android:ems="10"
         android:hint="@string/enter_value_in_miles"
         android:inputType="numberSigned|numberDecimal"
@@ -56,7 +56,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:onClick="convertButtonClicked"
-        android:text="Convert"
+        android:text="@string/convert"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputLabel" />
@@ -66,7 +66,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="Kilometers value:"
+        android:text="@string/kilometers_value"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
@@ -92,7 +92,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
-        android:text="Conversion History"
+        android:text="@string/conversion_history"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
@@ -113,9 +113,38 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:onClick="clearButtonClicked"
-        android:text="Clear"
+        android:text="@string/clear"
         app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
         app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
         app:layout_constraintTop_toBottomOf="@+id/conversionHistoryText" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
+        app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+        app:layout_constraintTop_toBottomOf="@+id/conversionTextView">
+
+        <RadioButton
+            android:id="@+id/milesToKilometers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:onClick="radioButtonClicked"
+            android:text="@string/miles_to_kilometers"
+            android:textSize="18sp" />
+
+        <RadioButton
+            android:id="@+id/kilometersToMiles"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="radioButtonClicked"
+            android:text="@string/kilometers_to_miles"
+            android:textSize="18sp" />
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

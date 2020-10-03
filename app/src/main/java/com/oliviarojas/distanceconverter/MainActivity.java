@@ -12,10 +12,13 @@ import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity {
 
+    private TextView inputLabel;
     private EditText inputValue;
+    private TextView outputLabel;
     private TextView outputValue;
     private TextView historyValue;
     private DecimalFormat format = new DecimalFormat("#.#");
+    private boolean isMiToKm = true;
 
     private static final String TAG = "MainActivityTag";
 
@@ -24,7 +27,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        inputLabel = findViewById(R.id.inputLabel);
         inputValue = findViewById(R.id.inputValue);
+        outputLabel = findViewById(R.id.resultLabel);
         outputValue = findViewById(R.id.resultValue);
         historyValue = findViewById(R.id.conversionHistoryText);
     }
@@ -36,9 +41,17 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        String output = convertMilesToKilometers(input);
+        String output = convert(input);
         outputValue.setText(output);
         setHistory(input, output);
+    }
+
+    private String convert(String input) {
+        if (isMiToKm) {
+            return convertMilesToKilometers(input);
+        } else {
+            return convertKilometersToMiles(input);
+        }
     }
 
     private String convertMilesToKilometers(String inputString) {
@@ -50,10 +63,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setHistory(String input, String output) {
-        historyValue.setText("Mi to Km: " + input + " ==> " + output + "\n" + historyValue.getText().toString());
+        if (isMiToKm) {
+            historyValue.setText(input + " mi ==> " + output + " km\n" + historyValue.getText().toString());
+        } else {
+            historyValue.setText(input + " km ==> " + output + " mi\n" + historyValue.getText().toString());
+        }
     }
 
     public void clearButtonClicked(View view) {
         historyValue.setText("");
+    }
+
+    public void radioButtonClicked(View view) {
+        if (R.id.milesToKilometers == view.getId()) {
+            isMiToKm = true;
+            inputLabel.setText(R.string.miles_value);
+            outputLabel.setText(R.string.kilometers_value);
+        } else {
+            isMiToKm = false;
+            inputLabel.setText(R.string.kilometers_value);
+            outputLabel.setText(R.string.miles_value);
+        }
+
     }
 }
