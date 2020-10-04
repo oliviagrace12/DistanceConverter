@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Distance Converter</string>
     <string name="miles_value">Miles value:</string>
-    <string name="conversion">Conversion:</string>
+    <string name="conversion">Conversion</string>
     <string name="enter_value_in_miles">Enter value</string>
     <string name="convert">Convert</string>
     <string name="kilometers_value">Kilometers value:</string>
@@ -9,4 +9,6 @@
     <string name="clear">Clear</string>
     <string name="miles_to_kilometers">Miles to Kilometers</string>
     <string name="kilometers_to_miles">Kilometers to Miles</string>
+    <string name="history_state">history_state</string>
+    <string name="result_state">result_state</string>
 </resources>

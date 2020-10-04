@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/miles_value"
-        android:textSize="24sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
@@ -46,7 +46,7 @@
         android:inputType="numberSigned|numberDecimal"
         android:shadowColor="#FFFFFF"
         android:textAlignment="textStart"
-        android:textSize="24sp"
+        android:textSize="18sp"
         android:visibility="visible"
         app:layout_constraintBaseline_toBaselineOf="@+id/inputLabel"
         app:layout_constraintEnd_toStartOf="@+id/guidelineRight" />
@@ -72,7 +72,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/kilometers_value"
-        android:textSize="24sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
         app:layout_constraintTop_toBottomOf="@+id/convertButton" />
@@ -86,10 +86,10 @@
 
     <TextView
         android:id="@+id/resultValue"
-        android:layout_width="0dp"
-        android:layout_height="51dp"
+        android:layout_width="167dp"
+        android:layout_height="35dp"
         android:background="@color/colorTextBackground"
-        android:textSize="24sp"
+        android:textSize="18sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/resultLabel"
         app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
         app:layout_constraintStart_toStartOf="@+id/inputValue" />
@@ -107,7 +107,7 @@
 
     <TextView
         android:id="@+id/conversionHistoryText"
-        android:layout_width="379dp"
+        android:layout_width="0dp"
         android:layout_height="117dp"
         android:layout_marginTop="8dp"
         android:background="@color/colorTextBackground"

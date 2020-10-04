@@ -31,25 +31,27 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/miles_value"
-        android:textSize="24sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
     <EditText
         android:id="@+id/inputValue"
-        android:layout_width="135dp"
-        android:layout_height="55dp"
+        android:layout_width="0dp"
+        android:layout_height="57dp"
+        android:layout_marginEnd="16dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/enter_value_in_miles"
         android:inputType="numberSigned|numberDecimal"
         android:shadowColor="#FFFFFF"
         android:textAlignment="textStart"
-        android:textSize="24sp"
+        android:textSize="18sp"
         android:visibility="visible"
         app:layout_constraintBaseline_toBaselineOf="@+id/inputLabel"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineCenter" />
+        app:layout_constraintEnd_toStartOf="@+id/guidelineCenter"
+        app:layout_constraintStart_toStartOf="@+id/resultValue" />
 
     <Button
         android:id="@+id/convertButton"
@@ -57,7 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginEnd="48dp"
         android:background="@color/colorAccent"
         android:onClick="convertButtonClicked"
         android:text="@string/convert"
@@ -72,7 +74,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/kilometers_value"
-        android:textSize="24sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
         app:layout_constraintTop_toBottomOf="@+id/convertButton" />
@@ -86,13 +88,13 @@
 
     <TextView
         android:id="@+id/resultValue"
-        android:layout_width="0dp"
-        android:layout_height="34dp"
+        android:layout_width="117dp"
+        android:layout_height="31dp"
+        android:layout_marginEnd="16dp"
         android:background="@color/colorTextBackground"
-        android:textSize="24sp"
+        android:textSize="18sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/resultLabel"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineCenter"
-        app:layout_constraintStart_toStartOf="@+id/inputValue" />
+        app:layout_constraintEnd_toStartOf="@+id/guidelineCenter" />
 
     <TextView
         android:id="@+id/conversionHistoryLabel"
@@ -108,10 +110,11 @@
 
     <TextView
         android:id="@+id/conversionHistoryText"
-        android:layout_width="335dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
         android:background="@color/colorTextBackground"
         android:scrollbars="vertical"
         android:textSize="18sp"
@@ -137,6 +140,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toStartOf="@+id/guidelineCenter"
         app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
         app:layout_constraintTop_toBottomOf="@+id/conversionTextView">
@@ -161,9 +165,11 @@
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineCenter"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="365dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.500684"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
