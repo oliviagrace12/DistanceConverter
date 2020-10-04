@@ -3,6 +3,7 @@ package com.oliviarojas.distanceconverter;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         outputLabel = findViewById(R.id.resultLabel);
         outputValue = findViewById(R.id.resultValue);
         historyValue = findViewById(R.id.conversionHistoryText);
+        historyValue.setMovementMethod(new ScrollingMovementMethod());
     }
 
     public void convertButtonClicked(View view) {
@@ -64,9 +66,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void setHistory(String input, String output) {
         if (isMiToKm) {
-            historyValue.setText(input + " mi ==> " + output + " km\n" + historyValue.getText().toString());
+            historyValue.setText(String.format("%s mi ==> %s km\n%s", input, output, historyValue.getText().toString()));
         } else {
-            historyValue.setText(input + " km ==> " + output + " mi\n" + historyValue.getText().toString());
+            historyValue.setText(String.format("%s km ==> %s mi\n%s", input, output, historyValue.getText().toString()));
         }
     }
 

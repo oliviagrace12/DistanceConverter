@@ -45,6 +45,7 @@
         android:hint="@string/enter_value_in_miles"
         android:inputType="numberSigned|numberDecimal"
         android:shadowColor="#FFFFFF"
+        android:textAlignment="textStart"
         android:textSize="24sp"
         android:visibility="visible"
         app:layout_constraintBaseline_toBaselineOf="@+id/inputLabel"
@@ -55,6 +56,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
+        android:background="@color/colorAccent"
         android:onClick="convertButtonClicked"
         android:text="@string/convert"
         app:layout_constraintEnd_toEndOf="parent"
@@ -83,6 +85,7 @@
         android:id="@+id/resultValue"
         android:layout_width="161dp"
         android:layout_height="51dp"
+        android:background="@color/colorTextBackground"
         android:textSize="24sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/resultLabel"
         app:layout_constraintEnd_toStartOf="@+id/guidelineRight" />
@@ -100,10 +103,13 @@
 
     <TextView
         android:id="@+id/conversionHistoryText"
-        android:layout_width="357dp"
+        android:layout_width="0dp"
         android:layout_height="145dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorTextBackground"
+        android:scrollbars="vertical"
         android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
         app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
         app:layout_constraintTop_toBottomOf="@+id/conversionHistoryLabel" />
 
@@ -112,6 +118,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:background="@color/colorAccent"
         android:onClick="clearButtonClicked"
         android:text="@string/clear"
         app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
@@ -122,9 +129,7 @@
         android:id="@+id/radioGroup"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
         app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
         app:layout_constraintTop_toBottomOf="@+id/conversionTextView">
