@@ -86,6 +86,5 @@ public class MainActivity extends AppCompatActivity {
             inputLabel.setText(R.string.kilometers_value);
             outputLabel.setText(R.string.miles_value);
         }
-
     }
 }
